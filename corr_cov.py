@@ -1,7 +1,8 @@
 import numpy as np
+import time
 
 n = 3
-p = 5
+p = 1000
 
 mean_mat = np.zeros(p)
 cov_mat = np.eye(p)
@@ -42,10 +43,22 @@ X = np.array([[ 0.52119361,  0.72812349,  1.00937058],
  [-1.1454827,   0.51868746, -0.5976506 ]])
  '''
 
-X = np.random.multivariate_normal(mean_mat, cov_mat, n)
+#X = np.random.multivariate_normal(mean_mat, cov_mat, n)
 
-print(var_mat(X))
-print(np.var(X, axis = 0))
+X = np.random.randn(n,p)
 
-print(cova_mat(X))
-print(np.cov(X, rowvar=False))
+t1 = time.time()
+var_mat(X)
+
+t2 = time.time()
+np.var(X, axis = 0)
+
+t3 = time.time()
+cova_mat(X)
+
+t4 = time.time()
+np.cov(X, rowvar=False)
+
+t5 = time.time()
+
+print(t2-t1, t3-t2, t4-t3, t5-t4)
