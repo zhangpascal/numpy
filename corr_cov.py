@@ -2,7 +2,7 @@ import numpy as np
 import time
 
 n = 3
-p = 1000
+p = 5
 
 mean_mat = np.zeros(p)
 cov_mat = np.eye(p)
@@ -51,13 +51,13 @@ t1 = time.time()
 var_mat(X)
 
 t2 = time.time()
-np.var(X, axis = 0)
+print(np.var(X, axis = 0))
 
 t3 = time.time()
 cova_mat(X)
 
 t4 = time.time()
-np.cov(X, rowvar=False)
+print(np.cov(X, rowvar=False))
 
 t5 = time.time()
 
