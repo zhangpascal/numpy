@@ -44,17 +44,7 @@ def cova_mat(X):
             cov[i, j] = my_cov(X[:,i], X[:,j])
     return cov
         
-'''
-X = np.array([[ 0.52119361,  0.72812349,  1.00937058],
- [-0.3287213,  -1.4603776,  -0.35621871],
- [ 0.23889542, -0.2778421,   0.21981612],
- [ 0.1965268,  -0.2019031,   1.23445598],
- [-1.1454827,   0.51868746, -0.5976506 ]])
- '''
-
-#X = np.random.multivariate_normal(mean_mat, cov_mat, n)
-
-X = np.random.randn(n,p)
+X = np.random.multivariate_normal(mean_mat, cov_mat, n)
 
 X = pre_proc(X) 
 
